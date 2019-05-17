@@ -13,7 +13,7 @@
    U - updateSmurf
    D - deleteSmurf
 */
-import axios from axios;
+import axios from "axios";
 export const FETCH_SMURFS_START = "FETCH_SMURFS_START";
 export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_START";
 export const FETCH_SMURFS_FAILURE = "FETCH_SMURFS_START";
@@ -39,7 +39,7 @@ export const getSmurfs = () => dispatch => {
     });
 };
 
-export const addSmurf = (smurf) => dispatch => {
+export const addSmurf = smurf => dispatch => {
   dispatch({ type: ADD_SMURFS_START });
   axios //may need return here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     .post("https://http://localhost:3333/smurfs", smurf)
