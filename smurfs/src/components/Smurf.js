@@ -3,9 +3,9 @@ import React from "react";
 const Smurf = props => {
   return (
     <div>
-      <li>{props.smurf.name}</li>
-      <li>{props.smurf.age}</li>
-      <li>{props.smurf.height}</li>
+      <h2>{props.smurf.name}</h2>
+      <p>{props.smurf.age} smurf years old</p>
+      <p>{props.smurf.height} tall</p>
     </div>
   );
 };

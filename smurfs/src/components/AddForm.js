@@ -14,16 +14,17 @@ class AddForm extends React.Component {
 
   addSmurf = e => {
     e.preventDefault();
-    this.props.addSmurf(this.state.smurf);
+    this.props.addSmurf(this.state);
     this.setState({
       name: "",
       age: "",
-      height: ""
+      height: "",
+      id: ""
     }); ///may need to make this.state only
   };
 
   handleChanges = e => {
-    this.ListeningStateChangedEvent({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   render() {
@@ -48,8 +49,20 @@ class AddForm extends React.Component {
             value={this.state.height}
             name="height"
           />
+          <button type="submit">Add</button>
         </form>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  smurfs: state.smurfs,
+  fetching: state.fetchingSmurfs,
+  error: state.error
+});
+
+export default connect(
+  mapStateToProps,
+  { addSmurf }
+)(AddForm);

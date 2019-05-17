@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import "./App.css";
 import { getSmurfs } from "../actions";
 import List from "./List";
+import AddForm from "./AddForm";
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
@@ -22,9 +23,11 @@ class App extends Component {
     if (this.props.error) {
       return <h1>ERROR</h1>;
     }
+
     return (
-      <div className="App">
+      <div>
         <List smurfs={this.props.smurfs} />
+        <AddForm />
       </div>
     );
   }

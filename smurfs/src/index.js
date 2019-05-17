@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
+import AddForm from "./components/AddForm";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { createStore, applyMiddleware } from "redux";
