@@ -23,8 +23,16 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+  - Actions are js objects that contain a type and potentially a payload property. The action that is accepted by the reducer as an argument will determine the behavior of the reducer. Reducers are responsible for updating the state of the application based on the action that they receive. The store is the only place in an application that holds the state of that application, thus it is referred to as the, “single source of truth” for an application.
+
+* [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  - Application state is the state that is stored in an application's store. Any part of the application that has access to the application's store has access the the application state. Component state, on the other hand, is established and accessible only to the local component at which it is defined. Component state is useful for small pieces of your application that perform very simple tasks whereas application state is used to handle more complex operations.
+
+* [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+  - Redux thunk is a package that allows for redux reducer data to flow asynchronously thus allowing for calls to an api. Thunk intercepts functions that are the output of action creators that are also on their way to the reducer. Thunk then passes the dispatch function as an argument to these functions. If the object of the action creator is an action, thunk allows the action to pass to the reducer unchanged.
 
 ## Project Set Up
 
@@ -80,9 +88,9 @@ return dispatch => {
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   }
 ];
@@ -113,15 +121,15 @@ Example of object created in Smurf DB:
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   },
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
@@ -173,9 +181,9 @@ Example:
 ```js
 output: [
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
