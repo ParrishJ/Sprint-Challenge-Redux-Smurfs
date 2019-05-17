@@ -44,7 +44,7 @@ export const reducer = (state = initialState, action) => {
     case FETCH_SMURFS_START:
       return {
         ...state,
-        smurfs: [],
+        /*  smurfs: [], */
         fetchingSmurfs: true,
         addingSmurf: false,
         updatingSmurf: false,
